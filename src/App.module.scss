@@ -1,0 +1,91 @@
+$main-color: #535bf2;
+
+%animaited {
+  animation-name: fade-in; 
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.h2 {
+  color: $main-color;
+}
+
+.h3, .h3_win, .h3_draw {
+  color: $main-color;
+  @extend %animaited;
+}
+
+.h3_win::before {
+  content: "Win";
+  color: white;
+}
+
+.h3::before, .h3_draw::before {
+  content: "It's ";
+  color: white;
+
+}
+
+.h3::after {
+  content: " turn";
+  color: white;
+}
+
+
+@keyframes fade-in {
+  from { opacity: 0; 
+  }
+  to { opacity: 1;}
+}
+
+.field {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 30%;
+  left: 35%;
+  top: 20%;
+}
+
+.field_row {
+  display: flex;
+}
+
+.field_row:first-child {
+  border-bottom: 2px solid white;
+}
+
+.field_row:last-child {
+  border-top: 2px solid white;
+}
+
+.reset_btn {
+  position: absolute;
+  top: 75%;
+  left: 48%;
+  padding: 8px;
+  font-size: 20px;
+  background-color: $main-color;
+  border: none;
+  border-radius: 5px;
+}
+
+.reset_btn:hover {
+  color: $main-color;
+  background-color: white;
+  cursor: pointer;
+}
+
+
+
+

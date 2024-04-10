@@ -1,0 +1,58 @@
+$main-color: #535bf2;
+
+p{ margin: 0;}
+
+.field_spot {
+  width: 150px;
+  height: 150px;
+  line-height: 110px;
+  font-size: 100px;
+}
+
+.field_spot_colored{
+  animation-name: coloring; 
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  color: #535bf2;
+}
+
+.field_text{
+  animation-name: fade-in; 
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; 
+    color: $main-color;
+  }
+  to { opacity: 1; 
+  color: white;}
+}
+
+@keyframes coloring {
+  from { 
+    color: white;
+  }
+  to { 
+  color: $main-color;}
+}
+
+.field_spot:hover {
+  background-color: rgba(169, 169, 169, 0.349);
+  cursor: pointer;
+}
+
+.field_spot:first-child {
+  border-right: 2px solid white;
+}
+
+.field_spot:last-child {
+  border-left: 2px solid white;
+}
+
+
